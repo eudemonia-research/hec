@@ -46,7 +46,7 @@ def handle_encrypt(ui):
         ui.statusBar.showMessage("Searching...")
         pub_point = search_for_pubkey(ui.address.text())
     except Exception as e:
-        ui.statusBar.showMessage("Error: " + str(e))
+        ui.statusBar.showMessage("Error: " + str(e), 3000)
         return
     ui.statusBar.showMessage("Encrypting...")
     ui.message.setPlainText(encrypt(pub_point, ui.message.toPlainText()))
@@ -58,7 +58,7 @@ def handle_decrypt(ui):
         secret = binascii.unhexlify(ui.secret_exponent.text())
     else:
         if not ui.address.text():
-            ui.statusBar.showMessage("Error: Need address or secret exponent.")
+            ui.statusBar.showMessage("Error: Need address or secret exponent.", 3000)
             return
 
         try:
@@ -66,7 +66,7 @@ def handle_decrypt(ui):
             secret = load_secret_from_wallet_dat(ui.address.text(),ui.statusBar)
             ui.statusBar.clearMessage()
         except Exception as e:
-            ui.statusBar.showMessage("Error: " + str(e))
+            ui.statusBar.showMessage("Error: " + str(e), 3000)
             return
 
         ui.statusBar.showMessage("Decrypting...")
@@ -75,7 +75,7 @@ def handle_decrypt(ui):
             ui.message.setPlainText(plaintext)
             ui.statusBar.showMessage("Decrypted.")
         except:
-            ui.statusBar.showMessage("Invalid ciphertext.")
+            ui.statusBar.showMessage("Invalid ciphertext.", 3000)
 
 app = QtWidgets.QApplication(sys.argv)
 mainWindow = QtWidgets.QMainWindow()
