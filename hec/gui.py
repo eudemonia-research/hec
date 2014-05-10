@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'hermes.ui'
+# Form implementation generated from reading ui file 'hec.ui'
 #
-# Created: Sun May 11 02:46:58 2014
+# Created: Sun May 11 03:57:06 2014
 #      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -76,7 +76,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Hermes"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "HEC"))
         self.status.setText(_translate("MainWindow", "HELLO ENCRYPT THINGS"))
         self.quit.setText(_translate("MainWindow", "Quit"))
         self.message.setPlainText(_translate("MainWindow", "Enter message to be encrypted/decrypted."))

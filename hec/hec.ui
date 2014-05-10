@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Hermes</string>
+   <string>HEC</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QPushButton::pressed {

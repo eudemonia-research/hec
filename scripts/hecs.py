@@ -1,12 +1,17 @@
-from PyQt5 import QtCore, QtWidgets
-from encryption import decode_point, encrypt, decrypt
-from gui import Ui_MainWindow
+#!/usr/bin/env python
+
 import binascii
 import os
 import re
 import sys
+
+from PyQt5 import QtCore, QtWidgets
 import pycoin.key
 import requests
+
+from hec.encryption import decode_point, encrypt, decrypt
+from hec.gui import Ui_MainWindow
+
 
 # Returns a point
 def search_for_pubkey(address):
