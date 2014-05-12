@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'hec.ui'
+# Form implementation generated from reading ui file 'hec/hec.ui'
 #
-# Created: Sun May 11 03:57:06 2014
+# Created: Mon May 12 23:41:51 2014
 #      by: PyQt5 UI code generator 5.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,22 +12,34 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(400, 300)
-        MainWindow.setStyleSheet("QPushButton::pressed {\n"
-"    background-color: #0f0;\n"
-"    color: black;\n"
+        MainWindow.resize(420, 324)
+        MainWindow.setStyleSheet("#centralwidget, #statusBar {\n"
+"    border: 1px solid #ccf;\n"
+"}\n"
+"#centralwidget {\n"
+"    border-bottom: none;\n"
+"}\n"
+"#statusBar {\n"
+"    border-top: 1px dotted #669;\n"
 "}\n"
 "QWidget {\n"
-"    background-color: black;\n"
-"    color: #0f0;\n"
+"    background-color: #222;\n"
+"    color: #ccf;\n"
 "}\n"
-"QPlainTextEdit, QLineEdit, QPushButton {\n"
-"    border: 1px solid green;\n"
-"    padding: 0.2em;\n"
-"    border-radius: 3px;\n"
+"QPlainTextEdit, QLineEdit {\n"
+"    font-family: monospace;\n"
+"    border: 1px solid #333;\n"
+"    padding: 0.4em;\n"
+"    border-radius: 0;\n"
 "}\n"
-"QStatusBar {\n"
-"    color: #999;\n"
+"QPushButton {\n"
+"    background-color: #222;\n"
+"    padding: 0.4em;\n"
+"}\n"
+"QSizeGrip {\n"
+"    border-right: 1px solid #ccf;\n"
+"    border-bottom: 1px solid #ccf;\n"
+"    background-color: #333;\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -68,6 +80,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QtWidgets.QStatusBar(MainWindow)
+        self.statusBar.setSizeGripEnabled(True)
         self.statusBar.setObjectName("statusBar")
         MainWindow.setStatusBar(self.statusBar)
 
@@ -77,8 +90,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "HEC"))
-        self.status.setText(_translate("MainWindow", "HELLO ENCRYPT THINGS"))
-        self.quit.setText(_translate("MainWindow", "Quit"))
+        self.status.setText(_translate("MainWindow", "Bitcoin Address Encryption"))
+        self.quit.setText(_translate("MainWindow", "Exit"))
         self.message.setPlainText(_translate("MainWindow", "Enter message to be encrypted/decrypted."))
         self.decrypt.setText(_translate("MainWindow", "Decrypt"))
         self.address.setPlaceholderText(_translate("MainWindow", "Address"))

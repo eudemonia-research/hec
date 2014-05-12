@@ -88,8 +88,11 @@ class MyWindow(QtWidgets.QMainWindow):
     def mousePressEvent(self, event):
         self.mpos = event.pos()
     def mouseMoveEvent(self, event):
-        diff = event.pos() - self.mpos
-        self.move(self.pos() + diff)
+        if hasattr(self, 'mpos') and self.mpos:
+            diff = event.pos() - self.mpos
+            self.move(self.pos() + diff)
+    def mouseReleaseEvent(self, event):
+        self.mpos = None
 
 mainWindow = MyWindow()
 ui = Ui_MainWindow()

@@ -6,29 +6,41 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>420</width>
+    <height>324</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>HEC</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton::pressed {
-    background-color: #0f0;
-    color: black;
+   <string notr="true">#centralwidget, #statusBar {
+    border: 1px solid #ccf;
+}
+#centralwidget {
+    border-bottom: none;
+}
+#statusBar {
+    border-top: 1px dotted #669;
 }
 QWidget {
-    background-color: black;
-    color: #0f0;
+    background-color: #222;
+    color: #ccf;
 }
-QPlainTextEdit, QLineEdit, QPushButton {
-    border: 1px solid green;
-    padding: 0.2em;
-    border-radius: 3px;
+QPlainTextEdit, QLineEdit {
+    font-family: monospace;
+    border: 1px solid #333;
+    padding: 0.4em;
+    border-radius: 0;
 }
-QStatusBar {
-    color: #999;
+QPushButton {
+    background-color: #222;
+    padding: 0.4em;
+}
+QSizeGrip {
+    border-right: 1px solid #ccf;
+    border-bottom: 1px solid #ccf;
+    background-color: #333;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -44,7 +56,7 @@ QStatusBar {
          </sizepolicy>
         </property>
         <property name="text">
-         <string>HELLO ENCRYPT THINGS</string>
+         <string>Bitcoin Address Encryption</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -54,7 +66,7 @@ QStatusBar {
       <item>
        <widget class="QPushButton" name="quit">
         <property name="text">
-         <string>Quit</string>
+         <string>Exit</string>
         </property>
        </widget>
       </item>
@@ -101,7 +113,11 @@ QStatusBar {
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="sizeGripEnabled">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
