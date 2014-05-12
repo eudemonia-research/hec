@@ -83,7 +83,15 @@ def handle_decrypt(ui):
             ui.statusBar.showMessage("Invalid ciphertext.", 3000)
 
 app = QtWidgets.QApplication(sys.argv)
-mainWindow = QtWidgets.QMainWindow()
+
+class MyWindow(QtWidgets.QMainWindow):
+    def mousePressEvent(self, event):
+        self.mpos = event.pos()
+    def mouseMoveEvent(self, event):
+        diff = event.pos() - self.mpos
+        self.move(self.pos() + diff)
+
+mainWindow = MyWindow()
 ui = Ui_MainWindow()
 ui.setupUi(mainWindow)
 mainWindow.setWindowFlags(QtCore.Qt.FramelessWindowHint)
