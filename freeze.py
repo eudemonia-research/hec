@@ -6,8 +6,7 @@ import requests.certs
 buildOptions = dict(packages = [], excludes = [], include_msvcr=True,
                     include_files=[(requests.certs.where(),'cacert.pem')])
 import sys
-# base = 'Win32GUI' if sys.platform=='win32' else None
-base=None
+base = 'Win32GUI' if sys.platform=='win32' else None
 
 executables = [
     Executable('scripts\\hecs.py', base=base, targetName = 'hecs.exe')
