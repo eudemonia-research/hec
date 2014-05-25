@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import binascii
+import inspect
 import os
 import re
 import sys
@@ -18,7 +19,12 @@ def search_for_pubkey(address):
     # Do this in order to raise an pycoin.encoding.EncodingError if necessary.
     pycoin.key.Key.from_text(address)
 
-    response = requests.get('https://blockchain.info/q/pubkeyaddr/' + address)
+    appdata = os.path.join(os.path.basename(inspect.stack()[0][1]),"..")
+    verify = os.path.join(appdata,'cacert.pem')
+    kwargs = {}
+    if os.path.exists(verify):
+        kwargs['verify'] = verify
+    response = requests.get('https://blockchain.info/q/pubkeyaddr/' + address, **kwargs)
 
     pubkey_hex = response.text
     if len(pubkey_hex) < 16:
